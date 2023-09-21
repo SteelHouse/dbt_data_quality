@@ -1,0 +1,12 @@
+dbt_data_quality:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: 10.21.1.70
+      user: read_only
+      password: "{{ env_var('DB_PASSWORD','DB_PASSWORD') }}"
+      port: 5432
+      dbname: coredw
+      schema: test
+      threads: 4
