@@ -1,0 +1,14 @@
+
+version: 2
+
+models:
+  - name: sum_by_advertiser_by_day
+    description: "A starter dbt model"
+    columns:
+      - name: advertiser_id
+        tests:
+          - not_null
+          - unique
+      - name: impressions
+        tests:
+          - not_null

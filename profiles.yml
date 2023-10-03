@@ -8,5 +8,5 @@ dbt_data_quality:
       password: "{{ env_var('DB_PASSWORD','DB_PASSWORD') }}"
       port: 5432
       dbname: coredw
-      schema: test
+      schema: test2
       threads: 4

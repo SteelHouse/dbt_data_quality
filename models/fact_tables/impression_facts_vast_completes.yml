@@ -1,0 +1,13 @@
+
+version: 2
+
+models:
+  - name: impression_facts_vast_completes
+    description: "A starter dbt model"
+    columns:
+      - name: advertiser_id
+        tests:
+          - not_null
+      - name: campaign_id
+        tests:
+          - not_null
