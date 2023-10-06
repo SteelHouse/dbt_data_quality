@@ -1,4 +1,4 @@
-dbt_data_quality:
+greenplum:
   target: dev
   outputs:
     dev:
@@ -10,3 +10,15 @@ dbt_data_quality:
       dbname: coredw
       schema: test2
       threads: 4
+
+clickhouse:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: summarydata
+      host: 10.4.34.182
+      port: 8123
+      user: r2ds
+      password: "{{ env_var('CHAPI_PASS','CHAPI_PASS') }}"
+      secure: False

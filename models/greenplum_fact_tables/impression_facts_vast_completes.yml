@@ -2,13 +2,13 @@
 version: 2
 
 models:
-  - name: sum_by_advertiser_by_day
+  - name: impression_facts_vast_completes
     description: "A starter dbt model"
     columns:
       - name: advertiser_id
+        description: this is the advertiser_id
         tests:
           - not_null
-          - unique
-      - name: impressions
+      - name: campaign_id
         tests:
           - not_null
