@@ -1,0 +1,13 @@
+
+version: 2
+
+models:
+  - name: spend_facts
+    description: "A starter dbt model"
+    columns:
+      - name: country
+        description: this is the advertiser_id
+        tests:
+          - accepted_values:
+              values: ['United States', '-4']
+
