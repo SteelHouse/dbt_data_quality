@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: event_log
+    tests:
+      - dbt_utils.recency:
+          datepart: day
+          field: time
+          interval: 1
