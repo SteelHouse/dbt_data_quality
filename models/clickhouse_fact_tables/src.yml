@@ -4,4 +4,4 @@ sources:
   - name: clickhouse
     schema: summarydata
     tables:
-      - name: impression_facts
+      - name: stg_all_facts_mn

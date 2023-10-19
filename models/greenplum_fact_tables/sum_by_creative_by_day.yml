@@ -2,10 +2,10 @@
 version: 2
 
 models:
-  - name: sum_by_segment_by_day
+  - name: sum_by_creative_by_day
     description: "A starter dbt model"
     columns:
-      - name: segment_id
+      - name: creative_id
         tests:
           - not_null
-          #- unique
+          - unique

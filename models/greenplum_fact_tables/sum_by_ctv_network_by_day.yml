@@ -1,0 +1,10 @@
+
+version: 2
+
+models:
+  - name: sum_by_ctv_network_by_day
+    description: "A starter dbt model"
+    columns:
+      - name: domain
+        tests:
+          - not_null

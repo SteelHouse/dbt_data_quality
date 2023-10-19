@@ -6,4 +6,4 @@
     )
 }}
 
-SELECT * FROM summarydata.spend_facts WHERE hour >= CURRENT_DATE - INTERVAL '1 day' AND hour < CURRENT_DATE
+SELECT * FROM summarydata.conversion_facts WHERE hour >= CURRENT_DATE - INTERVAL '1 day' AND hour < CURRENT_DATE

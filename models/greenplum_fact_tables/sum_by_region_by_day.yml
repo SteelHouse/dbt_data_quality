@@ -1,0 +1,15 @@
+
+version: 2
+
+models:
+  - name: sum_by_region_by_day
+    description: "A starter dbt model"
+    columns:
+      - name: region
+        tests:
+          - not_null
+tests:
+  - dbt_utils.unique_combination_of_columns:
+      combination_of_columns:
+        - advertiser_id
+        - region

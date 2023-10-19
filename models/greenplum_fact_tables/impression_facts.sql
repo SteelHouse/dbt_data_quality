@@ -6,4 +6,4 @@
     )
 }}
 
-SELECT * FROM cost_impression_log  where time >= CURRENT_DATE - INTERVAL '1 day' AND time < CURRENT_DATE
+SELECT * FROM summarydata.impression_facts WHERE hour >= CURRENT_DATE - INTERVAL '1 day' AND hour < CURRENT_DATE

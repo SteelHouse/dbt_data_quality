@@ -2,13 +2,18 @@
 version: 2
 
 models:
-  - name: impression_facts_vast_completes_clickhouse
+  - name: visit_facts
     description: "A starter dbt model"
     columns:
       - name: advertiser_id
-        description: this is the advertiser_id
         tests:
           - not_null
       - name: campaign_id
         tests:
           - not_null
+
+tests:
+  - dbt_utils.unique_combination_of_columns:
+      combination_of_columns:
+        - advertiser_id
+        - campaign_id

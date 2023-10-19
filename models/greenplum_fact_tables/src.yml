@@ -1,7 +1,0 @@
-version: 2
-
-sources:
-  - name: greenplum
-    schema: summarydata
-    tables:
-      - name: spend_facts

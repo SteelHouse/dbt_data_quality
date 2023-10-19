@@ -11,5 +11,5 @@ SELECT advertiser_id,
 campaign_id,
 vast_start,
 vast_complete
-from {{source('clickhouse', 'impression_facts')}} where hour >= CURRENT_DATE - INTERVAL '1 day' AND hour < CURRENT_DATE
+from {{source('clickhouse', 'stg_all_facts_mn')}} where hour = {{start_date}}
 
