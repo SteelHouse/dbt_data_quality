@@ -5,7 +5,7 @@ greenplum:
       type: postgres
       host: 10.21.1.70
       user: read_only
-      password: "{{ env_var('DB_PASSWORD','DB_PASSWORD') }}"
+      password: "{{ env_var('COREDW_RO_PASSWORD','COREDW_RO_PASSWORD') }}"
       port: 5432
       dbname: coredw
       schema: test2

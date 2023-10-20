@@ -1,7 +1,0 @@
-version: 2
-
-sources:
-  - name: clickhouse
-    schema: summarydata
-    tables:
-      - name: stg_all_facts_mn
