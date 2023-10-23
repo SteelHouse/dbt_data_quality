@@ -1,20 +1,22 @@
+version: "1.0"
+stages:
+  - "clone"
+  - "build-docker-image"
 
+steps:
+  clone:
+    title: "Clone repository"
+    type: "git-clone"
+    repo: "SteelHouse/dbt_data_quality"
+    revision: "${{CF_BRANCH}}"
+    git: "github"
+    stage: "clone"
 
-
-Docker-Build:
-  title: Building docker image
-  type: build
-  working_directory: '${{CLONE_STEP_NAME}}'
-  arguments:
-    image_name: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
-    tag: latest
-
-
-Push:
-  type: push
-  arguments:
-    candidate: '${{build_step_name}}'
-    tag: latest
-    image_name: codefresh/app
-    registry: my-registry
-
+  docker-image:
+    title: "Build Docker image"
+    stage: "build-docker-image"
+    type: "build"
+    image_name: 'steelhousedev/${{CF_REPO_NAME}}'
+    working_directory: "${{clone}}"
+    tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
+    dockerfile: 'Dockerfile'
