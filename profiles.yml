@@ -22,3 +22,13 @@ clickhouse:
       user: r2ds
       password: "{{ env_var('CHAPI_PASS','CHAPI_PASS') }}"
       secure: False
+
+spark:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: thrift
+      schema: default
+      host: ip-10-1-128-194.us-west-2.compute.internal
+      port: 10001

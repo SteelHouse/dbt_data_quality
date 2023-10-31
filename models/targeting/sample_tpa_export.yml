@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+  - name: sample_tpa_export
+    description: "A starter dbt model"
+    columns:
+      - name: ip
+        description: this is the ip
+        tests:
+          - not_null
+          - unique
