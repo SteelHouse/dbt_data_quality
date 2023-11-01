@@ -7,4 +7,4 @@
 }}
 
 
-SELECT get_json_object(raw_data, '$.ip') as ip FROM data_archive_prod.tpa_export_json_raw ORDER by rand() LIMIT 100000
+SELECT ip FROM data_archive_prod.tpa_export_ion

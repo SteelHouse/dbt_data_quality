@@ -30,5 +30,17 @@ spark:
       type: spark
       method: thrift
       schema: default
-      host: ip-10-1-128-194.us-west-2.compute.internal
+      host: "{{ env_var('EMR_HOST','EMR_HOST') }}"
       port: 10001
+
+athena:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://aws-athena-query-results-077854988703-us-west-2/
+      region_name: us-west-2
+      schema: data_archive_prod
+      database: AwsDataCatalog
+      aws_profile_name: integration
+

@@ -1,3 +1,2 @@
 dbt-core
 dbt-postgres
-dbt-clickhouse

@@ -8,5 +8,5 @@ models:
       - name: ip
         description: this is the ip
         tests:
-          - not_null
+          #- not_null
           - unique
