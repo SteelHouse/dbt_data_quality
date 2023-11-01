@@ -1,8 +1,10 @@
 TAG=dbt-data-runner
 
+.PHONY: build
 build:
 	docker build --build-arg COREDW_RO_PASSWORD=${COREDW_RO_PASSWORD} -t $(TAG) .
 
+.PHONY: run
 run:
 	touch $(HOME)/.gitconfig
 	touch $(HOME)/.bash_history
