@@ -70,4 +70,5 @@ databricks:
       schema: "dbdemos"
       host: "dbc-20e81420-6878.cloud.databricks.com"
       http_path: "sql/protocolv1/o/7431262589237143/0105-001529-52dzguvk"
-      token: "dapi3cd78622ef9357b2d011cfad5c9c5383"
+      token: "{{ env_var('DATABRICKS_TOKEN','DATABRICKS_TOKEN') }}"
+
