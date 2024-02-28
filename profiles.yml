@@ -22,3 +22,52 @@ clickhouse:
       user: r2ds
       password: "{{ env_var('CHAPI_PASS','CHAPI_PASS') }}"
       secure: False
+
+spark:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: thrift
+      schema: default
+      host: "{{ env_var('EMR_HOST','EMR_HOST') }}"
+      port: 10001
+      server_side_parameters:
+        "spark.driver.memory": "32g"
+        "spark.executor.memory": "6g"
+        "spark.executor.cores": "4"
+
+athena:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://aws-athena-query-results-077854988703-us-west-2/
+      region_name: us-west-2
+      schema: data_archive_prod
+      database: AwsDataCatalog
+      aws_profile_name: integration
+
+
+redshift:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      host: dev-integration-data.csqufkxaxf37.us-west-2.redshift.amazonaws.com
+      user: awsuser
+      password: "{{ env_var('RS_PASS','RS_PASS') }}"
+      dbname: coredw
+      schema: tpa
+      port: 5439
+
+databricks:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: "mntn_databricks_prod"
+      schema: "dbdemos"
+      host: "dbc-20e81420-6878.cloud.databricks.com"
+      http_path: "sql/protocolv1/o/7431262589237143/0105-001529-52dzguvk"
+      token: "dapi3cd78622ef9357b2d011cfad5c9c5383"

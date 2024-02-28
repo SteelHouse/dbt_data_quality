@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+  - name: sample_rs_export
+    description: "Sample of one day from Greenplum TPA export"
+
+    columns:
+      - name: ip
+        tests:
+          - unique
+          - not_null
