@@ -67,7 +67,7 @@ databricks:
     dev:
       type: databricks
       catalog: "mntn_databricks_prod"
-      schema: "dbdemos"
+      schema: "default"
       host: "dbc-20e81420-6878.cloud.databricks.com"
       http_path: "sql/protocolv1/o/7431262589237143/0105-001529-52dzguvk"
       token: "{{ env_var('DATABRICKS_TOKEN','DATABRICKS_TOKEN') }}"
