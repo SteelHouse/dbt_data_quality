@@ -1,0 +1,13 @@
+
+version: 2
+
+models:
+  - name: tpa_guid_check
+    columns:
+      - name: geo_location
+        tests:
+          - dbt_utils.not_null_proportion:
+              at_least: 0.90
+      - name: ip
+        tests:
+          - unique
